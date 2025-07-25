@@ -1,0 +1,24 @@
+<section class="h-screen overflow-y-scroll p-6">
+  <h2 class="text-2xl font-bold">Search Gifs</h2>
+  <h3 class="text-lg font-semibold text-gray-400">Find the perfect gif</h3>
+
+  @if (!queryParam()) {
+  <section class="flex flex-col gap-4">
+    <input
+      type="text"
+      placeholder="Search for gifs..."
+      class="mt-4 p-2 border rounded"
+      (keyup.enter)="onSearch(txtSearch.value)"
+      #txtSearch
+    />
+  </section>
+  }
+
+  <section class="mt-6">
+    @if (isLoading()) {
+    <div class="loading-spinner">loading...</div>
+    } @else {
+    <app-gif-list [gifs]="gifs()" #gifList />
+    }
+  </section>
+</section>

@@ -1,0 +1,5 @@
+@if (isLoading()) {
+<div class="loading-spinner">loading...</div>
+} @else {
+<app-gif-list [gifs]="gifs()" />
+}

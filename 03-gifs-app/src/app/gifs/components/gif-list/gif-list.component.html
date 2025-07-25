@@ -1,0 +1,12 @@
+<section
+  class="h-screen overflow-y-auto p-6 grid grid-cols-2 md:grid-cols-4 gap-4"
+  #scrollContainer
+>
+  @for (group of gifs(); track $index) {
+  <section class="grid gap-4">
+    @for (gif of group; track $index) {
+    <app-gif-list-item [gif]="gif" />
+    }
+  </section>
+  }
+</section>
